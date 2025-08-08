@@ -5,7 +5,7 @@
 [![Prisma](https://img.shields.io/badge/Prisma-5.0+-2D3748?logo=prisma&logoColor=white)](https://www.prisma.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-<img width="1470" alt="Welth Dashboard Preview" src="https://github.com/nandkishor22/Wealth/blob/main/image.png?raw=true" style="border-radius: 10px; margin: 20px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1)">
+<img width="1470" alt="Welth Dashboard Preview" src="public\Home.jpeg" style="border-radius: 10px; margin: 20px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1)">
 
 An intelligent personal finance management platform with AI-powered insights, real-time budgeting, and comprehensive financial tracking.
 
