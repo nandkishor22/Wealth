@@ -1,19 +1,17 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "./ui/button";
 import { PenBox, LayoutDashboard } from "lucide-react";
 import Link from "next/link";
-import { SignedIn, SignedOut, SignInButton, UserButton, useUser } from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { checkUser } from "@/lib/checkUser";
 import Image from "next/image";
-import { X, Menu } from "lucide-react";
 
-const Header = () => {
-  const { isSignedIn } = useUser();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const Header = async () => {
+  await checkUser();
 
   return (
-    <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b shadow-sm">
-      <nav className="container mx-auto px-4 py-4 flex items-center justify-between" aria-label="Main navigation">
+    <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b">
+      <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/">
           <Image
             src={"/logo.png"}
@@ -25,17 +23,17 @@ const Header = () => {
         </Link>
 
         {/* Navigation Links - Different for signed in/out users */}
-        <div className="hidden md:flex items-center space-x-8 mr-4">
+        <div className="hidden md:flex items-center space-x-8">
           <SignedOut>
-            <Link href="/#features" className="text-gray-600 hover:text-blue-600">
+            <a href="#features" className="text-gray-600 hover:text-blue-600">
               Features
-            </Link>
-            <Link
-              href="/#testimonials"
+            </a>
+            <a
+              href="#testimonials"
               className="text-gray-600 hover:text-blue-600"
             >
               Testimonials
-            </Link>
+            </a>
           </SignedOut>
         </div>
 
@@ -51,16 +49,16 @@ const Header = () => {
                 <span className="hidden md:inline">Dashboard</span>
               </Button>
             </Link>
-            <Link href="/transaction/create">
-              <Button className="flex items-center gap-2" aria-label="Add transaction">
+            <a href="/transaction/create">
+              <Button className="flex items-center gap-2">
                 <PenBox size={18} />
                 <span className="hidden md:inline">Add Transaction</span>
               </Button>
-            </Link>
+            </a>
           </SignedIn>
           <SignedOut>
             <SignInButton forceRedirectUrl="/dashboard">
-              <Button variant="outline" aria-label="Sign in">Login</Button>
+              <Button variant="outline">Login</Button>
             </SignInButton>
           </SignedOut>
           <SignedIn>
