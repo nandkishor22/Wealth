@@ -114,7 +114,7 @@ export function DashboardOverview({ accounts, transactions }) {
                 >
                   <div className="space-y-1">
                     <p className="text-sm font-medium leading-none">
-                      {transaction.description || "Untitled Transaction"}
+                      {transaction.category || "Untitled Transaction"}
                     </p>
                     <p className="text-sm text-muted-foreground">
                       {format(new Date(transaction.date), "PP")}
