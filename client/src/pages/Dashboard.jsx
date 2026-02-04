@@ -6,7 +6,7 @@ import Card from "../components/Card";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { Link } from "react-router-dom";
-import { FaArrowUp, FaArrowDown, FaWallet, FaRobot, FaTrophy } from "react-icons/fa";
+import { FaArrowUp, FaArrowDown, FaWallet, FaRobot, FaTrophy, FaSync } from "react-icons/fa";
 import { useAuth } from "../context/AuthContext";
 import API from "../utils/api";
 
@@ -311,6 +311,16 @@ const Dashboard = () => {
               </div>
               <h3 className="font-bold text-white">Set Budget</h3>
               <p className="text-sm text-gray-500 mt-1">Manage Limits</p>
+            </Card>
+          </Link>
+
+          <Link to="/recurring">
+            <Card className="h-full hover:bg-white/5 transition-colors cursor-pointer border-dashed border-2 border-white/10 flex flex-col items-center justify-center p-8 group min-h-[180px]">
+              <div className="w-12 h-12 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <FaSync size={20} />
+              </div>
+              <h3 className="font-bold text-white">Recurring Bills</h3>
+              <p className="text-sm text-gray-500 mt-1">Auto Transactions</p>
             </Card>
           </Link>
 

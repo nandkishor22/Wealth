@@ -17,6 +17,8 @@ import Goals from "./pages/Goals";
 import AddGoal from "./pages/AddGoal";
 import GoalDetail from "./pages/GoalDetail";
 import EditGoal from "./pages/EditGoal";
+import RecurringTransactions from "./pages/RecurringTransactions";
+import AddRecurringTransaction from "./pages/AddRecurringTransaction";
 
 import FinanceChatBot from "./components/FinanceChatBot";
 
@@ -165,6 +167,24 @@ function App() {
               element={
                 <ProtectedRoute>
                   <EditGoal />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/recurring"
+              element={
+                <ProtectedRoute>
+                  <RecurringTransactions />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/add-recurring"
+              element={
+                <ProtectedRoute>
+                  <AddRecurringTransaction />
                 </ProtectedRoute>
               }
             />
