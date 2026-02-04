@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import connectDB from "./config/db.js";
 import { startScheduler } from "./cron/scheduler.js";
+import { startRecurringTransactionsCron } from "./cron/recurringCron.js";
 
 import transactionRoutes from "./routes/transactionRoutes.js";
 import accountRoutes from "./routes/accountRoutes.js";
@@ -11,6 +12,7 @@ import budgetRoutes from "./routes/budgetRoutes.js";
 import aiRoutes from "./routes/aiRoutes.js";
 import whatsappRoutes from "./routes/whatsappRoutes.js";
 import goalRoutes from "./routes/goalRoutes.js";
+import recurringRoutes from "./routes/recurringRoutes.js";
 
 dotenv.config();
 
@@ -19,6 +21,7 @@ connectDB();
 // Start Cron Jobs (if any)
 try {
   startScheduler();
+  startRecurringTransactionsCron();
 } catch (error) {
   console.log("Scheduler error or not implemented:", error.message);
 }
@@ -38,6 +41,7 @@ app.use("/budgets", budgetRoutes);
 app.use("/ai", aiRoutes);
 app.use("/whatsapp", whatsappRoutes);
 app.use("/goals", goalRoutes);
+app.use("/recurring", recurringRoutes);
 
 // Test route
 app.get("/", (req, res) => {
