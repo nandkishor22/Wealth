@@ -5,7 +5,7 @@ import Card from "../components/Card";
 import Loader from "../components/Loader";
 import BackButton from "../components/BackButton";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaPlus, FaTrophy, FaEdit, FaTrash, FaCheckCircle, FaHourglassHalf, FaBan, FaCoins } from "react-icons/fa";
+import { FaPlus, FaTrophy, FaEdit, FaTrash, FaCheckCircle, FaHourglassHalf, FaCoins } from "react-icons/fa";
 import API from "../utils/api";
 
 const Goals = () => {
