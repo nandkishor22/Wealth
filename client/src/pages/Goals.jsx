@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import Card from "../components/Card";
 import Loader from "../components/Loader";
+import BackButton from "../components/BackButton";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaPlus, FaTrophy, FaEdit, FaTrash, FaCheckCircle, FaHourglassHalf, FaBan, FaCoins } from "react-icons/fa";
 import API from "../utils/api";
@@ -117,6 +118,8 @@ const Goals = () => {
     return (
         <Layout>
             <div className="min-h-screen p-6 md:p-8">
+                <BackButton to="/dashboard" />
+
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
@@ -198,8 +201,8 @@ const Goals = () => {
                             whileTap={{ scale: 0.95 }}
                             onClick={() => setFilter(status)}
                             className={`px-4 py-2 rounded-lg font-semibold whitespace-nowrap transition-all ${filter === status
-                                    ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white"
-                                    : "bg-white/5 text-gray-400 hover:bg-white/10"
+                                ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white"
+                                : "bg-white/5 text-gray-400 hover:bg-white/10"
                                 }`}
                         >
                             {status}
