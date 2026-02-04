@@ -19,6 +19,7 @@ const AddRecurringTransaction = () => {
         accountId: "",
         type: "Expense",
         amount: "",
+        currency: "INR",
         description: "",
         category: "",
         interval: "Monthly",
