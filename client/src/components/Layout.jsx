@@ -48,6 +48,11 @@ const Layout = ({ children }) => {
               </div>
             ) : (
               <div className="flex items-center gap-4">
+                <Link to="/goals">
+                  <button className="hidden md:flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 px-4 py-2 rounded-full font-medium transition-all hover:scale-105 active:scale-95 text-sm">
+                    🎯 Goals
+                  </button>
+                </Link>
                 <Link to="/add">
                   {/* Desktop Button */}
                   <button className="hidden sm:flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 px-5 py-2 rounded-full font-medium shadow-lg shadow-emerald-500/25 transition-transform hover:scale-105 active:scale-95">

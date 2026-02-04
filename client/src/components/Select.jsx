@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronDown } from "react-icons/fa";
 
-const Select = ({ label, options, value, onChange, placeholder = "Select...", error }) => {
+const Select = ({ label, name, options, value, onChange, placeholder = "Select...", error, required }) => {
     const [isOpen, setIsOpen] = useState(false);
     const ref = useRef(null);
 
@@ -55,7 +55,13 @@ const Select = ({ label, options, value, onChange, placeholder = "Select...", er
                                 onClick={(e) => {
                                     e.preventDefault();
                                     e.stopPropagation();
-                                    onChange(opt.value);
+                                    // Create event-like object for compatibility with form handlers
+                                    onChange({
+                                        target: {
+                                            name: name,
+                                            value: opt.value
+                                        }
+                                    });
                                     setIsOpen(false);
                                 }}
                                 className={`p-3 cursor-pointer hover:bg-emerald-500/20 hover:text-emerald-400 transition-colors ${value === opt.value ? "bg-emerald-500/10 text-emerald-400" : "text-gray-300"}`}

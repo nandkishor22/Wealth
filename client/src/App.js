@@ -12,8 +12,11 @@ import SplashScreen from "./components/SplashScreen";
 import Loader from "./components/Loader";
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
-
 import Profile from "./pages/Profile";
+import Goals from "./pages/Goals";
+import AddGoal from "./pages/AddGoal";
+import GoalDetail from "./pages/GoalDetail";
+import EditGoal from "./pages/EditGoal";
 
 import FinanceChatBot from "./components/FinanceChatBot";
 
@@ -126,6 +129,42 @@ function App() {
               element={
                 <ProtectedRoute>
                   <SetBudget />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/goals"
+              element={
+                <ProtectedRoute>
+                  <Goals />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/add-goal"
+              element={
+                <ProtectedRoute>
+                  <AddGoal />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/goal/:id"
+              element={
+                <ProtectedRoute>
+                  <GoalDetail />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/edit-goal/:id"
+              element={
+                <ProtectedRoute>
+                  <EditGoal />
                 </ProtectedRoute>
               }
             />
