@@ -2,7 +2,7 @@ import RecurringTransaction from "../models/RecurringTransaction.js";
 import Transaction from "../models/Transaction.js";
 import User from "../models/User.js";
 import { sendWhatsAppAlert } from "../services/whatsappService.js";
-import { sendEmail } from "../services/emailService.js";
+import { sendEmailAlert } from "../services/emailService.js";
 
 // Get all recurring transactions for user
 export const getRecurringTransactions = async (req, res) => {
@@ -381,7 +381,7 @@ async function sendRecurringNotification(recurring) {
                 </div>
             `;
 
-            await sendEmail(user.email, "Recurring Transaction Processed - Wealth App", html);
+            await sendEmailAlert(user.email, "Recurring Transaction Processed - Wealth App", html);
         }
     } catch (error) {
         console.error("Error sending recurring notification:", error);
@@ -429,7 +429,7 @@ async function sendRecurringReminderNotification(recurring) {
                 </div>
             `;
 
-            await sendEmail(user.email, "Upcoming Recurring Transaction - Wealth App", html);
+            await sendEmailAlert(user.email, "Upcoming Recurring Transaction - Wealth App", html);
         }
     } catch (error) {
         console.error("Error sending recurring reminder notification:", error);
