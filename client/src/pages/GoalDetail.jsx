@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import Card from "../components/Card";
 import BackButton from "../components/BackButton";
 import Loader from "../components/Loader";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { FaTrophy, FaCoins, FaEdit, FaTrash, FaCheckCircle, FaClock, FaCalendar } from "react-icons/fa";
 import API from "../utils/api";
 
@@ -16,11 +16,7 @@ const GoalDetail = () => {
     const [contributionAmount, setContributionAmount] = useState("");
     const [contributing, setContributing] = useState(false);
 
-    useEffect(() => {
-        fetchGoal();
-    }, [id]);
-
-    const fetchGoal = async () => {
+    const fetchGoal = useCallback(async () => {
         try {
             setLoading(true);
             const { data } = await API.get(`/goals/${id}`);
@@ -32,7 +28,11 @@ const GoalDetail = () => {
         } finally {
             setLoading(false);
         }
-    };
+    }, [id, navigate]);
+
+    useEffect(() => {
+        fetchGoal();
+    }, [fetchGoal]);
 
     const handleContribute = async (e) => {
         e.preventDefault();
@@ -136,20 +136,20 @@ const GoalDetail = () => {
                                         </span>
                                         <span
                                             className={`px-3 py-1 rounded-full text-sm font-semibold ${goal.priority === "High"
-                                                    ? "bg-red-500/30 text-red-200"
-                                                    : goal.priority === "Medium"
-                                                        ? "bg-yellow-500/30 text-yellow-200"
-                                                        : "bg-green-500/30 text-green-200"
+                                                ? "bg-red-500/30 text-red-200"
+                                                : goal.priority === "Medium"
+                                                    ? "bg-yellow-500/30 text-yellow-200"
+                                                    : "bg-green-500/30 text-green-200"
                                                 }`}
                                         >
                                             {goal.priority} Priority
                                         </span>
                                         <span
                                             className={`px-3 py-1 rounded-full text-sm font-semibold ${goal.status === "Completed"
-                                                    ? "bg-green-500/30 text-green-200"
-                                                    : goal.status === "In Progress"
-                                                        ? "bg-blue-500/30 text-blue-200"
-                                                        : "bg-gray-500/30 text-gray-200"
+                                                ? "bg-green-500/30 text-green-200"
+                                                : goal.status === "In Progress"
+                                                    ? "bg-blue-500/30 text-blue-200"
+                                                    : "bg-gray-500/30 text-gray-200"
                                                 }`}
                                         >
                                             {goal.status}
@@ -351,10 +351,10 @@ const GoalDetail = () => {
                                             <p className="text-sm text-gray-400">Days Remaining</p>
                                             <p
                                                 className={`font-semibold ${dayProgress < 0
-                                                        ? "text-red-400"
-                                                        : dayProgress <= 7
-                                                            ? "text-orange-400"
-                                                            : "text-green-400"
+                                                    ? "text-red-400"
+                                                    : dayProgress <= 7
+                                                        ? "text-orange-400"
+                                                        : "text-green-400"
                                                     }`}
                                             >
                                                 {dayProgress < 0 ? "Overdue" : `${dayProgress} days`}

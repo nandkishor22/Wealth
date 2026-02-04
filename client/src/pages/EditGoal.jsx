@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Layout from "../components/Layout";
 import Card from "../components/Card";
@@ -28,12 +28,7 @@ const EditGoal = () => {
         status: "In Progress",
     });
 
-    useEffect(() => {
-        fetchGoal();
-        fetchAccounts();
-    }, [id]);
-
-    const fetchGoal = async () => {
+    const fetchGoal = useCallback(async () => {
         try {
             const { data } = await API.get(`/goals/${id}`);
             setFormData({
@@ -54,7 +49,7 @@ const EditGoal = () => {
         } finally {
             setLoading(false);
         }
-    };
+    }, [id, navigate]);
 
     const fetchAccounts = async () => {
         try {
@@ -64,6 +59,11 @@ const EditGoal = () => {
             console.error("Error fetching accounts:", error);
         }
     };
+
+    useEffect(() => {
+        fetchGoal();
+        fetchAccounts();
+    }, [fetchGoal]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
