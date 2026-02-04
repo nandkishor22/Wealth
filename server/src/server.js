@@ -10,6 +10,7 @@ import authRoutes from "./routes/authRoutes.js";
 import budgetRoutes from "./routes/budgetRoutes.js";
 import aiRoutes from "./routes/aiRoutes.js";
 import whatsappRoutes from "./routes/whatsappRoutes.js";
+import goalRoutes from "./routes/goalRoutes.js";
 
 dotenv.config();
 
@@ -36,6 +37,7 @@ app.use("/accounts", accountRoutes);
 app.use("/budgets", budgetRoutes);
 app.use("/ai", aiRoutes);
 app.use("/whatsapp", whatsappRoutes);
+app.use("/goals", goalRoutes);
 
 // Test route
 app.get("/", (req, res) => {

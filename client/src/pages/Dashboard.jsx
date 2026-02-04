@@ -6,7 +6,7 @@ import Card from "../components/Card";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { Link } from "react-router-dom";
-import { FaArrowUp, FaArrowDown, FaWallet, FaRobot } from "react-icons/fa";
+import { FaArrowUp, FaArrowDown, FaWallet, FaRobot, FaTrophy } from "react-icons/fa";
 import { useAuth } from "../context/AuthContext";
 import API from "../utils/api";
 
@@ -294,6 +294,16 @@ const Dashboard = () => {
 
         {/* Quick Actions & Accounts */}
         <motion.div variants={item} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <Link to="/goals">
+            <Card className="h-full hover:bg-white/5 transition-colors cursor-pointer border-dashed border-2 border-white/10 flex flex-col items-center justify-center p-8 group min-h-[180px]">
+              <div className="w-12 h-12 rounded-full bg-yellow-500/20 text-yellow-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <FaTrophy size={20} />
+              </div>
+              <h3 className="font-bold text-white">Financial Goals</h3>
+              <p className="text-sm text-gray-500 mt-1">Track Progress</p>
+            </Card>
+          </Link>
+
           <Link to="/budget">
             <Card className="h-full hover:bg-white/5 transition-colors cursor-pointer border-dashed border-2 border-white/10 flex flex-col items-center justify-center p-8 group min-h-[180px]">
               <div className="w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
