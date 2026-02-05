@@ -73,6 +73,13 @@ Secure authentication and sleek profile management.
 - ✅ Monthly automated reports with AI-generated insights
 - ✅ Spending trend analysis and predictions
 
+### **Intelligent Receipt Scanner**
+- ✅ Instant OCR text extraction from images
+- ✅ **Hybrid AI Parsing**: Combines AI intelligence with robust regex patterns for maximum accuracy
+- ✅ Auto-detection of Merchant, Date, Amount, and Category
+- ✅ Smart fallback mechanisms to ensure data integrity
+- ✅ One-click conversion from "Scanned Receipt" to "Expense Transaction"
+
 ---
 
 ## ✨ Key Features
@@ -101,7 +108,8 @@ Secure authentication and sleek profile management.
 -   **📸 Receipt Scanning & OCR**: Effortless expense tracking with intelligent receipt scanning
     - Drag & drop or camera capture for receipt images
     - Automatic OCR text extraction using Tesseract.js
-    - Smart parsing of amount, date, merchant, and category
+    - **AI-Powered Analysis**: Hybrid AI & Regex parsing for precise extraction of details
+    - Smart auto-categorization of expenses
     - Secure cloud storage with Cloudinary
     - One-click transaction creation from scanned receipts
     - Receipt gallery with filtering and search
