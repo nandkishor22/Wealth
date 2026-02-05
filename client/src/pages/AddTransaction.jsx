@@ -9,7 +9,7 @@ import Select from "../components/Select";
 import DatePicker from "../components/DatePicker";
 import { motion } from "framer-motion";
 import BackButton from "../components/BackButton";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import API from "../utils/api";
 import { INCOME_CATEGORIES, EXPENSE_CATEGORIES } from "../constants/categories";
@@ -21,28 +21,70 @@ const schema = z.object({
     type: z.enum(["income", "expense"]),
     category: z.string().min(2, "Category is required"),
     accountId: z.string().min(1, "Account is required"),
-
+    description: z.string().optional(),
 });
 
 const AddTransaction = () => {
     const navigate = useNavigate();
+    const location = useLocation();
     const [accounts, setAccounts] = React.useState([]);
     const { user } = useAuth();
+
+    // Receipt data from navigation state
+    const { receiptId, receiptData, receiptUrl } = location.state || {}; // Extract receipt info
 
     const {
         register,
         handleSubmit,
         watch,
         control,
+        setValue,
         formState: { errors },
     } = useForm({
         resolver: zodResolver(schema),
         defaultValues: {
             date: new Date(),
             type: "expense",
-            currency: "INR"
+            currency: "INR",
+            description: ""
         }
     });
+
+    React.useEffect(() => {
+        if (receiptData) {
+            if (receiptData.amount) setValue("amount", receiptData.amount);
+            if (receiptData.date) setValue("date", new Date(receiptData.date));
+            if (receiptData.merchantName) setValue("description", receiptData.merchantName);
+
+            // Map receipt categories to app categories
+            const categoryMap = {
+                'food & dining': 'Food',
+                'groceries': 'Food',
+                'transportation': 'Transport',
+                'shopping': 'Shopping',
+                'healthcare': 'Health',
+                'entertainment': 'Entertainment',
+                'utilities': 'Bills',
+                'education': 'Education',
+                'travel': 'Travel',
+                'other': 'Other'
+            };
+
+            if (receiptData.category) {
+                const mappedCategory = categoryMap[receiptData.category.toLowerCase()];
+                // Check if the mapped category exists in our options
+                const isValidCategory = EXPENSE_CATEGORIES.some(c => c.value === mappedCategory);
+
+                if (isValidCategory) {
+                    setValue("category", mappedCategory);
+                } else if (EXPENSE_CATEGORIES.some(c => c.value.toLowerCase() === receiptData.category.toLowerCase())) {
+                    // Fallback: try direct case-insensitive match
+                    const exactMatch = EXPENSE_CATEGORIES.find(c => c.value.toLowerCase() === receiptData.category.toLowerCase());
+                    if (exactMatch) setValue("category", exactMatch.value);
+                }
+            }
+        }
+    }, [receiptData, setValue]);
 
     React.useEffect(() => {
         const fetchAccounts = async () => {
@@ -50,6 +92,18 @@ const AddTransaction = () => {
             try {
                 const { data } = await API.get(`/accounts`);
                 setAccounts(data);
+
+                // Set default account if available and not already set manually
+                if (!watch("accountId")) {
+                    const defaultAcc = data.find(acc => acc.isDefault);
+                    if (defaultAcc) {
+                        setValue("accountId", defaultAcc._id);
+                    } else if (data.length > 0) {
+                        // Fallback to first account if no default
+                        setValue("accountId", data[0]._id);
+                    }
+                }
+
                 if (data.length === 0) {
                     navigate("/add-account");
                 }
@@ -58,13 +112,15 @@ const AddTransaction = () => {
             }
         };
         if (user) fetchAccounts();
-    }, [user, navigate]);
+    }, [user, navigate, setValue, watch]);
 
     const onSubmit = async (data) => {
         try {
             await API.post("/transactions", {
                 ...data,
-                description: data.category, // Category becomes the title
+                description: data.description || data.category, // Use description if available
+                receiptId, // Send receipt info
+                receiptUrl // Send receipt info
             });
             navigate("/dashboard");
         } catch (error) {
@@ -157,6 +213,16 @@ const AddTransaction = () => {
                                     )}
                                 />
                             </div>
+                        </div>
+
+                        <div>
+                            <label className="block mb-1 text-sm">Description / Merchant</label>
+                            <input
+                                type="text"
+                                {...register("description")}
+                                placeholder="What is this transaction for?"
+                                className="w-full p-3 rounded-xl bg-white/5 border border-white/20 focus:outline-none focus:border-purple-500 transition-colors"
+                            />
                         </div>
 
 

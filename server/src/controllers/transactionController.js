@@ -1,5 +1,6 @@
 import Transaction from "../models/Transaction.js";
 import Account from "../models/Account.js";
+import Receipt from "../models/Receipt.js";
 import { checkBudgetExceeded } from "../services/budgetService.js";
 
 // POST /transactions
@@ -8,7 +9,7 @@ export const addTransaction = async (req, res) => {
     const {
       accountId, type, amount, currency,
       category, description, date,
-      isRecurring, recurringInterval, status, receiptUrl
+      isRecurring, recurringInterval, status, receiptUrl, receiptId
     } = req.body;
     const userId = req.user._id;
 
@@ -38,15 +39,27 @@ export const addTransaction = async (req, res) => {
       receiptUrl
     });
 
-    // 2. Update Account Balance
-    if (type.toLowerCase() === "income") {
-      account.initialBalance += amount;
-    } else {
-      account.initialBalance -= amount;
-      // Check budget if expense
+    // If receiptId provided, link it
+    if (receiptId) {
+      await Receipt.findByIdAndUpdate(receiptId, {
+        transactionId: newTx._id,
+        status: 'LINKED',
+        receiptUrl: receiptUrl || newTx.receiptUrl
+      });
+    }
+
+    // 2. Update Account Balance Atomically
+    const adjustment = type.toLowerCase() === "income" ? amount : -amount;
+
+    await Account.findByIdAndUpdate(
+      accountId,
+      { $inc: { initialBalance: adjustment } }
+    );
+
+    // Check budget if expense
+    if (type.toLowerCase() !== "income") {
       checkBudgetExceeded(userId, amount, date);
     }
-    await account.save();
 
     res.status(201).json(newTx);
   } catch (err) {
@@ -135,16 +148,24 @@ export const deleteTransaction = async (req, res) => {
       return res.status(403).json({ error: "Unauthorized" });
     }
 
-    // Reverse Balance
-    const account = await Account.findById(tx.accountId);
-    if (account) {
-      if (tx.type.toLowerCase() === "income") {
-        account.initialBalance -= tx.amount;
-      } else {
-        account.initialBalance += tx.amount;
+    // Reverse Balance Atomically
+    const adjustment = (tx.type.toLowerCase() === "income")
+      ? -tx.amount
+      : tx.amount;
+
+    await Account.findByIdAndUpdate(
+      tx.accountId,
+      { $inc: { initialBalance: adjustment } }
+    );
+
+    // Unlink any associated receipt
+    await Receipt.findOneAndUpdate(
+      { transactionId: tx._id },
+      {
+        transactionId: null,
+        status: 'PROCESSED'
       }
-      await account.save();
-    }
+    );
 
     await tx.deleteOne();
     res.status(200).json({ message: "Deleted" });

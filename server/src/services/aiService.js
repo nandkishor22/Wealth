@@ -51,3 +51,60 @@ export const getSavingTips = async (expenses, budget, totalSpent) => {
         return "Try to limit your spending in major categories to stay within budget.";
     }
 };
+
+export const parseReceiptTextAI = async (ocrText) => {
+    const apiKey = process.env.GROQ_API_KEY;
+
+    if (!apiKey) {
+        console.warn("⚠️ GROQ_API_KEY not found. Using fallback regex parsing.");
+        return null;
+    }
+
+    try {
+        const groq = new Groq({ apiKey });
+
+        const prompt = `
+            You are a receipt parsing assistant. Your goal is to extract structured data from messy OCR text.
+            
+            EXTRACT THESE DETAILS:
+            1. Merchant Name: Look for large text at the top or "Welcome to..." Avoid generic terms like "Tax Invoice" or "Receipt".
+            2. Date: Look for dates in any format (DD/MM/YYYY, YYYY-MM-DD, Month DD, etc.). Convert to YYYY-MM-DD.
+            3. Total Amount: Look for the FINAL TOTAL. Ignore subtotals, tax amounts, or cash tendered. It is usually the largest number or labeled "Total".
+            4. Category: Infer the category based on the merchant and items (Food & Dining, Groceries, Transportation, Shopping, Healthcare, Entertainment, Utilities, Education, Other).
+
+            RAW OCR TEXT:
+            """${ocrText.substring(0, 2000)}"""
+
+            RETURN ONLY A VALID JSON OBJECT. NO markdown, NO explanations.
+            If a field cannot be found, set it to null.
+
+            {
+                "merchantName": "Merchant Name or null",
+                "date": "YYYY-MM-DD or null",
+                "amount": 0.00,
+                "category": "Category or Other"
+            }
+        `;
+
+        const chatCompletion = await groq.chat.completions.create({
+            messages: [
+                {
+                    role: "user",
+                    content: prompt,
+                },
+            ],
+            model: "llama-3.3-70b-versatile",
+            temperature: 0.1, // Low temperature for consistent formatting
+        });
+
+        const responseContent = chatCompletion.choices[0]?.message?.content;
+
+        // Clean up response if it wraps in markdown
+        const cleanerJson = responseContent.replace(/```json/g, '').replace(/```/g, '').trim();
+
+        return JSON.parse(cleanerJson);
+    } catch (error) {
+        console.error("❌ Groq Receipt Parse Error:", error);
+        return null;
+    }
+};

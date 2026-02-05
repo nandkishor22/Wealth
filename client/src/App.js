@@ -19,6 +19,9 @@ import GoalDetail from "./pages/GoalDetail";
 import EditGoal from "./pages/EditGoal";
 import RecurringTransactions from "./pages/RecurringTransactions";
 import AddRecurringTransaction from "./pages/AddRecurringTransaction";
+import ReceiptScanner from "./pages/ReceiptScanner";
+import ReceiptGallery from "./pages/ReceiptGallery";
+import ReceiptDetail from "./pages/ReceiptDetail";
 
 import FinanceChatBot from "./components/FinanceChatBot";
 
@@ -185,6 +188,33 @@ function App() {
               element={
                 <ProtectedRoute>
                   <AddRecurringTransaction />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/scan-receipt"
+              element={
+                <ProtectedRoute>
+                  <ReceiptScanner />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/receipts"
+              element={
+                <ProtectedRoute>
+                  <ReceiptGallery />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/receipts/:id"
+              element={
+                <ProtectedRoute>
+                  <ReceiptDetail />
                 </ProtectedRoute>
               }
             />

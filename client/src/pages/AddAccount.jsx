@@ -126,6 +126,18 @@ const AddAccount = () => {
                             </div>
                         </div>
 
+                        <div className="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/10">
+                            <input
+                                type="checkbox"
+                                id="isDefault"
+                                {...register("isDefault")}
+                                className="w-5 h-5 text-emerald-500 rounded focus:ring-emerald-500 border-gray-600 bg-gray-700"
+                            />
+                            <label htmlFor="isDefault" className="text-sm text-gray-300">
+                                Set as Default Account
+                            </label>
+                        </div>
+
                         <button
                             type="submit"
                             className="w-full py-4 mt-6 bg-emerald-500 hover:bg-emerald-400 text-black font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)]"

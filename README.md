@@ -98,6 +98,15 @@ Secure authentication and sleek profile management.
     - Auto-generation of transactions
     - Manage subscriptions and bills
     - Upcoming transactions preview on dashboard
+-   **📸 Receipt Scanning & OCR**: Effortless expense tracking with intelligent receipt scanning
+    - Drag & drop or camera capture for receipt images
+    - Automatic OCR text extraction using Tesseract.js
+    - Smart parsing of amount, date, merchant, and category
+    - Secure cloud storage with Cloudinary
+    - One-click transaction creation from scanned receipts
+    - Receipt gallery with filtering and search
+    - Link receipts to transactions for proof of purchase
+
 
 ### 🤖 **AI-Powered Intelligence**
 -   **🤖 AI Finance Advisor**: Integrated ChatBot powered by Groq SDK (LLaMA 3.3 70B)
@@ -163,6 +172,7 @@ Secure authentication and sleek profile management.
 *   **Form Management**: React Hook Form with Zod validation
 *   **HTTP Client**: Axios
 *   **Date Handling**: date-fns, Flatpickr
+*   **Receipt Scanning**: Tesseract.js (OCR), react-dropzone
 
 ### **Backend (Server)**
 *   **Runtime**: Node.js
@@ -173,6 +183,11 @@ Secure authentication and sleek profile management.
 *   **Notifications**: 
     - Email: Nodemailer
     - WhatsApp: Twilio
+*   **Receipt Processing**:
+    - OCR: Tesseract.js
+    - Image Storage: Cloudinary
+    - Upload Handling: Multer
+    - Image Processing: Sharp
 *   **Task Scheduling**: node-cron (for recurring transactions and monthly reports)
 *   **Environment**: dotenv
 
@@ -224,6 +239,12 @@ EMAIL_PASSWORD=your_app_specific_password
 TWILIO_ACCOUNT_SID=your_twilio_account_sid
 TWILIO_AUTH_TOKEN=your_twilio_auth_token
 TWILIO_PHONE_NUMBER=your_twilio_whatsapp_number
+
+# Cloudinary Configuration (For Receipt Storage)
+CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+CLOUDINARY_FOLDER=wealth-receipts
 
 # Frontend URL
 CLIENT_URL=http://localhost:3000
@@ -307,9 +328,9 @@ Wealth/
 - 🤖 AI Finance Advisor ChatBot
 - 📊 Enhanced Dashboard Analytics
 - 📱 Multi-channel Notifications (Email + WhatsApp)
+- 📸 Receipt Scanning & OCR (Fully Implemented)
 
 ### 🚧 **In Progress**
-- 📸 Receipt Scanning & OCR
 - 💰 Investment Portfolio Tracker
 - 📈 Advanced Analytics Dashboard with AI predictions
 

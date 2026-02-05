@@ -2,7 +2,7 @@ import FloatingBackground from "./FloatingBackground";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useAuth } from "../context/AuthContext";
-import { FaSignOutAlt, FaPlus } from "react-icons/fa";
+import { FaSignOutAlt, FaPlus, FaReceipt } from "react-icons/fa";
 
 const Layout = ({ children }) => {
   const { user, logout } = useAuth();
@@ -48,12 +48,20 @@ const Layout = ({ children }) => {
               </div>
             ) : (
               <div className="flex items-center gap-4">
-                <Link to="/goals">
+                <Link to="/receipts" className="flex items-center">
                   <button className="hidden md:flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 px-4 py-2 rounded-full font-medium transition-all hover:scale-105 active:scale-95 text-sm">
+                    <FaReceipt className="text-purple-400" /> Receipts
+                  </button>
+                  <button className="flex md:hidden items-center justify-center bg-white/5 hover:bg-white/10 border border-white/10 w-9 h-9 rounded-full font-medium transition-all hover:scale-105 active:scale-95 text-sm">
+                    <FaReceipt className="text-purple-400" />
+                  </button>
+                </Link>
+                <Link to="/goals" className="hidden md:flex items-center">
+                  <button className="flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 px-4 py-2 rounded-full font-medium transition-all hover:scale-105 active:scale-95 text-sm">
                     🎯 Goals
                   </button>
                 </Link>
-                <Link to="/add">
+                <Link to="/add" className="flex items-center">
                   {/* Desktop Button */}
                   <button className="hidden sm:flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 px-5 py-2 rounded-full font-medium shadow-lg shadow-emerald-500/25 transition-transform hover:scale-105 active:scale-95">
                     <FaPlus size={14} /> Add

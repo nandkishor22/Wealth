@@ -37,7 +37,8 @@ export const registerUser = async (req, res) => {
                 name: "Cash Wallet",
                 type: "CASH",
                 currency: "INR",
-                initialBalance: 0
+                initialBalance: 0,
+                isDefault: true // Make the first account default
             });
 
             // Send WhatsApp Welcome Message (Non-blocking)
