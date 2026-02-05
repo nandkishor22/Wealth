@@ -14,7 +14,7 @@ export const processReceiptOCR = async (imagePath) => {
             imagePath,
             'eng',
             {
-                logger: m => console.log(m) // Log progress
+                // logger: m => console.log(m) // Disabled to reduce noise
             }
         );
 
