@@ -37,6 +37,13 @@ try {
 
 const app = express();
 
+// Standard Middleware - CORS must be first to handle preflights/errors correctly
+app.use(cors({
+  origin: ["http://localhost:3000", "http://localhost:5173", "http://127.0.0.1:3000", "http://10.154.153.74:3000", "http://192.168.1.5:3000"], // Added common local IP range just in case
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Explicitly added OPTIONS
+  credentials: true
+}));
+
 // Security Middleware
 app.use(helmet()); // Set security HTTP headers
 
@@ -45,19 +52,17 @@ app.use(morgan("dev")); // Log requests
 
 // Rate Limiting
 const limiter = rateLimit({
-  windowMs: 10 * 60 * 1000, // 10 minutes
-  max: 100, // Limit each IP to 100 requests per windowMs
-  message: "Too many requests from this IP, please try again later."
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 1000, // Limit each IP to 1000 requests per windowMs
+  message: "Too many requests from this IP, please try again later.",
+  standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
+  legacyHeaders: false, // Disable the `X-RateLimit-*` headers
 });
 app.use("/auth", limiter); // Apply stricter limits to auth routes specifically
 app.use(limiter); // Apply to all routes
 
 // Standard Middleware
-app.use(cors({
-  origin: ["http://localhost:3000", "http://localhost:5173", "http://127.0.0.1:3000", "http://10.154.153.74:3000"], // Restrict to frontend URLs
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
+
 app.use(express.json({ limit: "50mb" })); // Limit body size expanded for large receipts
 app.use(express.urlencoded({ extended: false, limit: "50mb" }));
 
