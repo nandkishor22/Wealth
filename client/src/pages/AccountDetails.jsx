@@ -6,7 +6,7 @@ import Loader from "../components/Loader";
 import BackButton from "../components/BackButton";
 
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
-import { FaTrash, FaEdit, FaArrowLeft, FaChevronDown } from "react-icons/fa";
+import { FaTrash, FaEdit, FaChevronDown } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAuth } from "../context/AuthContext";
 import API from "../utils/api";
