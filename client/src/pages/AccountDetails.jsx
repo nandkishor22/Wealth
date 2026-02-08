@@ -186,7 +186,7 @@ const AccountDetails = () => {
                 {/* Analysis Chart */}
                 <Card>
                     <h3 className="text-xl font-bold mb-4">Daily Activity</h3>
-                    <div className="h-80 w-full" style={{ minHeight: '300px' }}>
+                    <div style={{ width: "100%", height: 320, minHeight: 320 }}>
                         <ResponsiveContainer width="100%" height="100%">
                             <BarChart data={chartData}>
                                 <CartesianGrid strokeDasharray="3 3" stroke="#333" />

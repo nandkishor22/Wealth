@@ -21,7 +21,7 @@ const Chart = ({ data }) => {
   );
 
   return (
-    <div className="w-full h-[300px]" style={{ minHeight: "300px" }}>
+    <div style={{ width: "100%", height: 300, minHeight: 300 }}>
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie
