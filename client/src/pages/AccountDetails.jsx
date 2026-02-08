@@ -184,21 +184,23 @@ const AccountDetails = () => {
                 </div>
 
                 {/* Analysis Chart */}
-                <Card className="h-80">
+                <Card>
                     <h3 className="text-xl font-bold mb-4">Daily Activity</h3>
-                    <ResponsiveContainer width="100%" height="100%">
-                        <BarChart data={chartData}>
-                            <CartesianGrid strokeDasharray="3 3" stroke="#333" />
-                            <XAxis dataKey="name" stroke="#888" tick={{ fontSize: 10 }} interval={2} />
-                            <YAxis stroke="#888" />
-                            <Tooltip
-                                contentStyle={{ backgroundColor: "#111", border: "1px solid #333" }}
-                                cursor={{ fill: 'rgba(255,255,255,0.05)' }}
-                            />
-                            <Bar dataKey="Income" fill="#10b981" radius={[4, 4, 0, 0]} />
-                            <Bar dataKey="Expense" fill="#ef4444" radius={[4, 4, 0, 0]} />
-                        </BarChart>
-                    </ResponsiveContainer>
+                    <div className="h-80 w-full" style={{ minHeight: '300px' }}>
+                        <ResponsiveContainer width="100%" height="100%">
+                            <BarChart data={chartData}>
+                                <CartesianGrid strokeDasharray="3 3" stroke="#333" />
+                                <XAxis dataKey="name" stroke="#888" tick={{ fontSize: 10 }} interval={2} />
+                                <YAxis stroke="#888" />
+                                <Tooltip
+                                    contentStyle={{ backgroundColor: "#111", border: "1px solid #333" }}
+                                    cursor={{ fill: 'rgba(255,255,255,0.05)' }}
+                                />
+                                <Bar dataKey="Income" fill="#10b981" radius={[4, 4, 0, 0]} />
+                                <Bar dataKey="Expense" fill="#ef4444" radius={[4, 4, 0, 0]} />
+                            </BarChart>
+                        </ResponsiveContainer>
+                    </div>
                 </Card>
 
                 {/* Transactions List */}

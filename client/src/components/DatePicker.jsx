@@ -13,13 +13,14 @@ const DatePicker = ({ label, selected, onChange, error }) => {
                     <FaCalendarAlt size={14} />
                 </div>
                 <Flatpickr
-                    value={selected}
+                    value={selected instanceof Date ? selected : new Date(selected || Date.now())}
                     onChange={([date]) => onChange(date)}
                     className={`w-full p-3 pl-10 rounded-xl bg-white/5 border ${error ? "border-red-500" : "border-white/10 hover:border-purple-500"
                         } focus:outline-none transition-colors text-white cursor-pointer`}
                     options={{
                         dateFormat: "F j, Y",
-                        disableMobile: "true"
+                        disableMobile: true,
+                        allowInput: true
                     }}
                     placeholder="Select Date"
                 />
