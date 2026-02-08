@@ -1,6 +1,6 @@
 {
   "name": "wealth",
-  "version": "1.0.0",
+  "version": "2.5.0",
   "description": "![Wealth Banner](client/public/home.png)",
   "main": "index.js",
   "scripts": {
