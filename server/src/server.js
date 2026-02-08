@@ -5,6 +5,7 @@ import mongoSanitize from "express-mongo-sanitize";
 import xss from "xss-clean";
 import hpp from "hpp";
 import morgan from "morgan";
+import compression from "compression";
 
 // Last restarted: Force reload env vars
 import dotenv from "dotenv";
@@ -39,13 +40,14 @@ const app = express();
 
 // Standard Middleware - CORS must be first to handle preflights/errors correctly
 app.use(cors({
-  origin: ["http://localhost:3000", "http://localhost:5173", "http://127.0.0.1:3000", "http://10.154.153.74:3000", "http://192.168.1.5:3000"], // Added common local IP range just in case
+  origin: ["http://localhost:3000", "http://localhost:5173", "http://127.0.0.1:3000", "http://10.230.12.74:3000", "http://10.154.153.74:3000", "http://192.168.1.5:3000"], // Added common local IP range just in case
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Explicitly added OPTIONS
   credentials: true
 }));
 
 // Security Middleware
 app.use(helmet()); // Set security HTTP headers
+app.use(compression()); // Compress all responses
 
 // Logging
 app.use(morgan("dev")); // Log requests
