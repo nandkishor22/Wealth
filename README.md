@@ -1,5 +1,10 @@
 # 💰 Wealth - Smart Personal Finance Manager
 
+<div align="center">
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+</div>
+
 ![Wealth Banner](client/public/home.png)
 
 > **Experience the future of personal finance management. Track, Analyze, and Grow your wealth with AI-driven insights.**
@@ -410,7 +415,23 @@ If you need help or have questions:
 
 ## 📄 License
 
-This project is licensed under the **ISC License**. Feel free to use, modify, and distribute as per the license terms.
+**Wealth** is open-source software licensed under the **MIT License**.
+
+<div align="center">
+  <a href="./LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-F7D002?style=for-the-badge&logo=opensource&logoColor=black" alt="MIT License" />
+  </a>
+</div>
+
+### You are free to:
+*   **Share** — copy and redistribute the material in any medium or format
+*   **Adapt** — remix, transform, and build upon the material
+*   **Commercial Use** — for any purpose, even commercially
+
+Under the following terms:
+*   **Attribution** — You must give appropriate credit (Copyright © 2026 Nandkishor Mali)
+
+See the [LICENSE](./LICENSE) file for the full text.
 
 ---
 
