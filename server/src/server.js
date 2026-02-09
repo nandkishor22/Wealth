@@ -47,7 +47,7 @@ app.use((req, res, next) => {
 });
 
 app.use(cors({
-  origin: ["http://localhost:3000", "http://localhost:5173", "http://127.0.0.1:3000", "http://10.230.12.74:3000", "http://10.154.153.74:3000", "http://192.168.1.5:3000"], // Added common local IP range just in case
+  origin: ["http://localhost:3000", "http://localhost:5173", "http://127.0.0.1:3000", "http://10.230.12.74:3000", "http://10.154.153.74:3000", "http://192.168.1.5:3000", "http://10.147.156.74:3000"], // Added common local IP range just in case
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Explicitly added OPTIONS
   credentials: true
 }));
