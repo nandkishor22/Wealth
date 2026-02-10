@@ -21,10 +21,6 @@
 | **Friday** | | Submission of Project Synopsis/Abstract to Guide for approval. | Synopsis submitted. | |
 | **Saturday** | | Weekly team meeting to discuss feedback and plan next week. | Week 1 planning review. | |
 
-<br><br><br>
-
-**Signature of Faculty** `____________________` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Signature of HOD** `____________________`
-
 ---
 <div style="page-break-after: always;"></div>
 
@@ -37,8 +33,6 @@
 | 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
 | 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
-**Name of Guide (Faculty):** `________________________________`  
-**Semester:** `__________`   **Project Batch Number:** `__________`  
 **WEEK:** `Week 2: Requirements Gathering & Analysis`
 
 | Day | Date | Activity carried out (Details) | Achievement of milestone/step as per plan | Remark of Faculty |
@@ -49,10 +43,6 @@
 | **Thursday** | | Drafting Software Requirement Specification (SRS) document - Introduction & Scope. | SRS Draft 1 created. | |
 | **Friday** | | Drafting SRS - Specific Requirements, User Interfaces, and System Interfaces. | SRS document completed. | |
 | **Saturday** | | Review of SRS with Guide and incorporation of changes. | SRS approved. | |
-
-<br><br><br>
-
-**Signature of Faculty** `____________________` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Signature of HOD** `____________________`
 
 ---
 <div style="page-break-after: always;"></div>
@@ -66,8 +56,6 @@
 | 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
 | 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
-**Name of Guide (Faculty):** `________________________________`  
-**Semester:** `__________`   **Project Batch Number:** `__________`  
 **WEEK:** `Week 3: System Design & Architecture`
 
 | Day | Date | Activity carried out (Details) | Achievement of milestone/step as per plan | Remark of Faculty |
@@ -78,10 +66,6 @@
 | **Thursday** | | Designing Activity Diagrams and Sequence Diagrams for core features. | Behavioral diagrams done. | |
 | **Friday** | | Database Design: Entity Relationship (ER) Diagram creation. | ER Diagram completed. | |
 | **Saturday** | | Design Document preparation and verification against requirements. | System Design finalized. | |
-
-<br><br><br>
-
-**Signature of Faculty** `____________________` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Signature of HOD** `____________________`
 
 ---
 <div style="page-break-after: always;"></div>
@@ -95,8 +79,6 @@
 | 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
 | 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
-**Name of Guide (Faculty):** `________________________________`  
-**Semester:** `__________`   **Project Batch Number:** `__________`  
 **WEEK:** `Week 4: UI/UX Design & Database Schema`
 
 | Day | Date | Activity carried out (Details) | Achievement of milestone/step as per plan | Remark of Faculty |
@@ -107,10 +89,6 @@
 | **Thursday** | | MongoDB Schema Design: Users, Accounts, Transactions, Budgets, Goals collections. | Schema structure defined. | |
 | **Friday** | | Defining relationships and indexing strategy for MongoDB. | Database optimization planned. | |
 | **Saturday** | | Review of UI Prototypes and Database Schema with team. | Design phase completed. | |
-
-<br><br><br>
-
-**Signature of Faculty** `____________________` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Signature of HOD** `____________________`
 
 ---
 <div style="page-break-after: always;"></div>
@@ -124,8 +102,6 @@
 | 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
 | 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
-**Name of Guide (Faculty):** `________________________________`  
-**Semester:** `__________`   **Project Batch Number:** `__________`  
 **WEEK:** `Week 5: Environment Setup & Project Foundation`
 
 | Day | Date | Activity carried out (Details) | Achievement of milestone/step as per plan | Remark of Faculty |
@@ -136,10 +112,6 @@
 | **Thursday** | | Folder Structure Setup: MVC for Backend, Components/Pages for Frontend. | Project structure organized. | |
 | **Friday** | | Configuring Environment Variables (.env) and Security Middlewares (Cors, Helmet). | Env config completed. | |
 | **Saturday** | | Testing basic client-server connectivity (Hello World API). | Communication established. | |
-
-<br><br><br>
-
-**Signature of Faculty** `____________________` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Signature of HOD** `____________________`
 
 ---
 <div style="page-break-after: always;"></div>
@@ -153,8 +125,6 @@
 | 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
 | 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
-**Name of Guide (Faculty):** `________________________________`  
-**Semester:** `__________`   **Project Batch Number:** `__________`  
 **WEEK:** `Week 6: Coding - Authentication & User Profile`
 
 | Day | Date | Activity carried out (Details) | Achievement of milestone/step as per plan | Remark of Faculty |
@@ -165,10 +135,6 @@
 | **Thursday** | | Frontend: Integrating Auth APIs and managing state with Context/Redux. | Frontend auth working. | |
 | **Friday** | | Implementing "Forgot Password" flow and User Profile update functionality. | Profile management done. | |
 | **Saturday** | | Unit Testing of Authentication modules and Token verification. | Auth module tested. | |
-
-<br><br><br>
-
-**Signature of Faculty** `____________________` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Signature of HOD** `____________________`
 
 ---
 <div style="page-break-after: always;"></div>
@@ -182,8 +148,6 @@
 | 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
 | 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
-**Name of Guide (Faculty):** `________________________________`  
-**Semester:** `__________`   **Project Batch Number:** `__________`  
 **WEEK:** `Week 7: Coding - Core Features (Accounts & Dashboard)`
 
 | Day | Date | Activity carried out (Details) | Achievement of milestone/step as per plan | Remark of Faculty |
@@ -194,10 +158,6 @@
 | **Thursday** | | Backend: Setting up 'Transaction' Model and basic Add/Get Transaction APIs. | Transaction Model created. | |
 | **Friday** | | Frontend: Dashboard Overview Cards (Total Balance, Income, Expense). | Dashboard stats visible. | |
 | **Saturday** | | Integration testing of Accounts and Dashboard stats. | Core UI integration done. | |
-
-<br><br><br>
-
-**Signature of Faculty** `____________________` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Signature of HOD** `____________________`
 
 ---
 <div style="page-break-after: always;"></div>
@@ -211,8 +171,6 @@
 | 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
 | 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
-**Name of Guide (Faculty):** `________________________________`  
-**Semester:** `__________`   **Project Batch Number:** `__________`  
 **WEEK:** `Week 8: Coding - Transactions & Analytics UI`
 
 | Day | Date | Activity carried out (Details) | Achievement of milestone/step as per plan | Remark of Faculty |
@@ -223,10 +181,6 @@
 | **Thursday** | | Frontend: Integrating Recharts library for Visual Analytics (Pie charts, Bar graphs). | Charts added to Dashboard. | |
 | **Friday** | | Implementing logical updates: Updating Account Balance when Transaction is added. | Balance synchronization logic. | |
 | **Saturday** | | Testing Transaction flow and graphical accuracy on Dashboard. | Analytics verified. | |
-
-<br><br><br>
-
-**Signature of Faculty** `____________________` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Signature of HOD** `____________________`
 
 ---
 <div style="page-break-after: always;"></div>
@@ -240,8 +194,6 @@
 | 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
 | 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
-**Name of Guide (Faculty):** `________________________________`  
-**Semester:** `__________`   **Project Batch Number:** `__________`  
 **WEEK:** `Week 9: Coding - Budgets & Recurring Transactions`
 
 | Day | Date | Activity carried out (Details) | Achievement of milestone/step as per plan | Remark of Faculty |
@@ -252,10 +204,6 @@
 | **Thursday** | | Frontend: UI for Managing Recurring Transactions (Subscriptions/Bills). | Recurring UI done. | |
 | **Friday** | | Implementing Alert Logic: Notifications when Budget exceeds 80% or 100%. | Budget alerts active. | |
 | **Saturday** | | Testing Automated Transaction creation and Budget overspending alerts. | Automation testing. | |
-
-<br><br><br>
-
-**Signature of Faculty** `____________________` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Signature of HOD** `____________________`
 
 ---
 <div style="page-break-after: always;"></div>
@@ -269,8 +217,6 @@
 | 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
 | 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
-**Name of Guide (Faculty):** `________________________________`  
-**Semester:** `__________`   **Project Batch Number:** `__________`  
 **WEEK:** `Week 10: Coding - Financial Goals Feature`
 
 | Day | Date | Activity carried out (Details) | Achievement of milestone/step as per plan | Remark of Faculty |
@@ -281,10 +227,6 @@
 | **Thursday** | | Frontend: Detail view for Goals showing history of contributions. | Goal details view ready. | |
 | **Friday** | | Implementing visual styling: Confetti/Animations on Goal Completion. | UX enhancements. | |
 | **Saturday** | | Integration testing of Goals with Accounts module (Balance updates). | Goals module tested. | |
-
-<br><br><br>
-
-**Signature of Faculty** `____________________` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Signature of HOD** `____________________`
 
 ---
 <div style="page-break-after: always;"></div>
@@ -298,8 +240,6 @@
 | 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
 | 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
-**Name of Guide (Faculty):** `________________________________`  
-**Semester:** `__________`   **Project Batch Number:** `__________`  
 **WEEK:** `Week 11: Advanced Features - Receipt Scanning (OCR)`
 
 | Day | Date | Activity carried out (Details) | Achievement of milestone/step as per plan | Remark of Faculty |
@@ -310,10 +250,6 @@
 | **Thursday** | | Implementing Tesseract.js logic to extract text (Date, Amount, Merchant) from image. | Text extraction working. | |
 | **Friday** | | Implementing Regex logic to parse extracted text into structured Transaction data. | Data parsing logic done. | |
 | **Saturday** | | Testing OCR accuracy with various receipt samples and refining patterns. | Receipt scanning verified. | |
-
-<br><br><br>
-
-**Signature of Faculty** `____________________` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Signature of HOD** `____________________`
 
 ---
 <div style="page-break-after: always;"></div>
@@ -327,8 +263,6 @@
 | 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
 | 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
-**Name of Guide (Faculty):** `________________________________`  
-**Semester:** `__________`   **Project Batch Number:** `__________`  
 **WEEK:** `Week 12: Advanced Features - AI Financial Advisor`
 
 | Day | Date | Activity carried out (Details) | Achievement of milestone/step as per plan | Remark of Faculty |
@@ -339,10 +273,6 @@
 | **Thursday** | | Connecting Chat UI to Backend AI endpoint for real-time Q&A. | Chatbot functional. | |
 | **Friday** | | Implementing "Context Awareness": Feeding User's financial summary to AI for personalized tips. | Personalized AI insights. | |
 | **Saturday** | | Testing AI responses for finance-related queries and edge cases. | AI Module tested. | |
-
-<br><br><br>
-
-**Signature of Faculty** `____________________` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Signature of HOD** `____________________`
 
 ---
 <div style="page-break-after: always;"></div>
@@ -356,8 +286,6 @@
 | 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
 | 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
-**Name of Guide (Faculty):** `________________________________`  
-**Semester:** `__________`   **Project Batch Number:** `__________`  
 **WEEK:** `Week 13: Notifications, Testing & Optimization`
 
 | Day | Date | Activity carried out (Details) | Achievement of milestone/step as per plan | Remark of Faculty |
@@ -368,10 +296,6 @@
 | **Thursday** | | Integration Testing: End-to-End flows (Register -> Add Money -> Spend -> Alert). | E2E testing completed. | |
 | **Friday** | | Performance Optimization: Code splitting, Image optimization, Lazy loading. | App performance tuned. | |
 | **Saturday** | | Bug Fixing session based on testing results. | Critical bugs resolved. | |
-
-<br><br><br>
-
-**Signature of Faculty** `____________________` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Signature of HOD** `____________________`
 
 ---
 <div style="page-break-after: always;"></div>
@@ -385,8 +309,6 @@
 | 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
 | 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
-**Name of Guide (Faculty):** `________________________________`  
-**Semester:** `__________`   **Project Batch Number:** `__________`  
 **WEEK:** `Week 14: Documentation & Deployment`
 
 | Day | Date | Activity carried out (Details) | Achievement of milestone/step as per plan | Remark of Faculty |
@@ -397,10 +319,6 @@
 | **Thursday** | | Deploying Server to Render/Heroku and Client to Vercel/Netlify. | Cloud deployment done. | |
 | **Friday** | | Post-Deployment Testing: Verifying live URL and database connections. | Live site verified. | |
 | **Saturday** | | Finalizing Project Report and printing draft for checking. | Documentation complete. | |
-
-<br><br><br>
-
-**Signature of Faculty** `____________________` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Signature of HOD** `____________________`
 
 ---
 <div style="page-break-after: always;"></div>
@@ -414,8 +332,6 @@
 | 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
 | 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
-**Name of Guide (Faculty):** `________________________________`  
-**Semester:** `__________`   **Project Batch Number:** `__________`  
 **WEEK:** `Week 15: Final Review & Presentation`
 
 | Day | Date | Activity carried out (Details) | Achievement of milestone/step as per plan | Remark of Faculty |
@@ -426,7 +342,3 @@
 | **Thursday** | | Final polish of code cleanup and repository README update (License, Badges). | Repository finalized. | |
 | **Friday** | | Signing of Project Diary and Report by Guide. | Sign-offs obtained. | |
 | **Saturday** | | Final Project Submission to Department. | Project Submitted. | |
-
-<br><br><br>
-
-**Signature of Faculty** `____________________` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Signature of HOD** `____________________`
