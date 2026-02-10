@@ -8,8 +8,9 @@
 | 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
 | 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
-**Name of Guide (Faculty):** `________________________________`  
-**Semester:** `__________`   **Project Batch Number:** `__________`  
+**Name of Guide (Faculty):** `Y.S.Bhosale`  
+**Semester:** `Sixth`   **Project Batch Number:** `7th`  
+
 **WEEK:** `Week 1: Topic Selection & Problem Definition`
 
 | Day | Date | Activity carried out (Details) | Achievement of milestone/step as per plan | Remark of Faculty |
@@ -26,12 +27,6 @@
 
 # PROJECT DIARY (Weekly/Daily) - Week 2
 
-| Sr. No. | Roll no. | Enrolment No. | Name |
-| :--- | :--- | :--- | :--- |
-| 1 | 21 | 23210970410 | Nandkishor Balaso Mali |
-| 2 | 22 | 23210970412 | Vinit Jayprakash Potdar |
-| 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
-| 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
 **WEEK:** `Week 2: Requirements Gathering & Analysis`
 
@@ -49,12 +44,6 @@
 
 # PROJECT DIARY (Weekly/Daily) - Week 3
 
-| Sr. No. | Roll no. | Enrolment No. | Name |
-| :--- | :--- | :--- | :--- |
-| 1 | 21 | 23210970410 | Nandkishor Balaso Mali |
-| 2 | 22 | 23210970412 | Vinit Jayprakash Potdar |
-| 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
-| 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
 **WEEK:** `Week 3: System Design & Architecture`
 
@@ -72,12 +61,6 @@
 
 # PROJECT DIARY (Weekly/Daily) - Week 4
 
-| Sr. No. | Roll no. | Enrolment No. | Name |
-| :--- | :--- | :--- | :--- |
-| 1 | 21 | 23210970410 | Nandkishor Balaso Mali |
-| 2 | 22 | 23210970412 | Vinit Jayprakash Potdar |
-| 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
-| 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
 **WEEK:** `Week 4: UI/UX Design & Database Schema`
 
@@ -95,12 +78,6 @@
 
 # PROJECT DIARY (Weekly/Daily) - Week 5
 
-| Sr. No. | Roll no. | Enrolment No. | Name |
-| :--- | :--- | :--- | :--- |
-| 1 | 21 | 23210970410 | Nandkishor Balaso Mali |
-| 2 | 22 | 23210970412 | Vinit Jayprakash Potdar |
-| 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
-| 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
 **WEEK:** `Week 5: Environment Setup & Project Foundation`
 
@@ -118,12 +95,6 @@
 
 # PROJECT DIARY (Weekly/Daily) - Week 6
 
-| Sr. No. | Roll no. | Enrolment No. | Name |
-| :--- | :--- | :--- | :--- |
-| 1 | 21 | 23210970410 | Nandkishor Balaso Mali |
-| 2 | 22 | 23210970412 | Vinit Jayprakash Potdar |
-| 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
-| 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
 **WEEK:** `Week 6: Coding - Authentication & User Profile`
 
@@ -141,12 +112,6 @@
 
 # PROJECT DIARY (Weekly/Daily) - Week 7
 
-| Sr. No. | Roll no. | Enrolment No. | Name |
-| :--- | :--- | :--- | :--- |
-| 1 | 21 | 23210970410 | Nandkishor Balaso Mali |
-| 2 | 22 | 23210970412 | Vinit Jayprakash Potdar |
-| 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
-| 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
 **WEEK:** `Week 7: Coding - Core Features (Accounts & Dashboard)`
 
@@ -164,12 +129,6 @@
 
 # PROJECT DIARY (Weekly/Daily) - Week 8
 
-| Sr. No. | Roll no. | Enrolment No. | Name |
-| :--- | :--- | :--- | :--- |
-| 1 | 21 | 23210970410 | Nandkishor Balaso Mali |
-| 2 | 22 | 23210970412 | Vinit Jayprakash Potdar |
-| 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
-| 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
 **WEEK:** `Week 8: Coding - Transactions & Analytics UI`
 
@@ -187,12 +146,6 @@
 
 # PROJECT DIARY (Weekly/Daily) - Week 9
 
-| Sr. No. | Roll no. | Enrolment No. | Name |
-| :--- | :--- | :--- | :--- |
-| 1 | 21 | 23210970410 | Nandkishor Balaso Mali |
-| 2 | 22 | 23210970412 | Vinit Jayprakash Potdar |
-| 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
-| 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
 **WEEK:** `Week 9: Coding - Budgets & Recurring Transactions`
 
@@ -210,12 +163,6 @@
 
 # PROJECT DIARY (Weekly/Daily) - Week 10
 
-| Sr. No. | Roll no. | Enrolment No. | Name |
-| :--- | :--- | :--- | :--- |
-| 1 | 21 | 23210970410 | Nandkishor Balaso Mali |
-| 2 | 22 | 23210970412 | Vinit Jayprakash Potdar |
-| 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
-| 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
 **WEEK:** `Week 10: Coding - Financial Goals Feature`
 
@@ -233,12 +180,6 @@
 
 # PROJECT DIARY (Weekly/Daily) - Week 11
 
-| Sr. No. | Roll no. | Enrolment No. | Name |
-| :--- | :--- | :--- | :--- |
-| 1 | 21 | 23210970410 | Nandkishor Balaso Mali |
-| 2 | 22 | 23210970412 | Vinit Jayprakash Potdar |
-| 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
-| 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
 **WEEK:** `Week 11: Advanced Features - Receipt Scanning (OCR)`
 
@@ -256,12 +197,6 @@
 
 # PROJECT DIARY (Weekly/Daily) - Week 12
 
-| Sr. No. | Roll no. | Enrolment No. | Name |
-| :--- | :--- | :--- | :--- |
-| 1 | 21 | 23210970410 | Nandkishor Balaso Mali |
-| 2 | 22 | 23210970412 | Vinit Jayprakash Potdar |
-| 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
-| 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
 **WEEK:** `Week 12: Advanced Features - AI Financial Advisor`
 
@@ -279,12 +214,6 @@
 
 # PROJECT DIARY (Weekly/Daily) - Week 13
 
-| Sr. No. | Roll no. | Enrolment No. | Name |
-| :--- | :--- | :--- | :--- |
-| 1 | 21 | 23210970410 | Nandkishor Balaso Mali |
-| 2 | 22 | 23210970412 | Vinit Jayprakash Potdar |
-| 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
-| 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
 **WEEK:** `Week 13: Notifications, Testing & Optimization`
 
@@ -302,12 +231,6 @@
 
 # PROJECT DIARY (Weekly/Daily) - Week 14
 
-| Sr. No. | Roll no. | Enrolment No. | Name |
-| :--- | :--- | :--- | :--- |
-| 1 | 21 | 23210970410 | Nandkishor Balaso Mali |
-| 2 | 22 | 23210970412 | Vinit Jayprakash Potdar |
-| 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
-| 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
 **WEEK:** `Week 14: Documentation & Deployment`
 
@@ -325,12 +248,6 @@
 
 # PROJECT DIARY (Weekly/Daily) - Week 15
 
-| Sr. No. | Roll no. | Enrolment No. | Name |
-| :--- | :--- | :--- | :--- |
-| 1 | 21 | 23210970410 | Nandkishor Balaso Mali |
-| 2 | 22 | 23210970412 | Vinit Jayprakash Potdar |
-| 3 | 23 | 23210970402 | Tanmay Mahadev Kate |
-| 4 | 24 | 24210970412 | Prathmesh Shantaram Dhumal |
 
 **WEEK:** `Week 15: Final Review & Presentation`
 
