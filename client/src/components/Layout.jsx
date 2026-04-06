@@ -48,6 +48,11 @@ const Layout = ({ children }) => {
               </div>
             ) : (
               <div className="flex items-center gap-4">
+                <Link to="/dashboard" className="hidden md:flex items-center">
+                  <button className="flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 px-4 py-2 rounded-full font-medium transition-all hover:scale-105 active:scale-95 text-sm">
+                    📊 Dashboard
+                  </button>
+                </Link>
                 <Link to="/receipts" className="flex items-center">
                   <button className="hidden md:flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 px-4 py-2 rounded-full font-medium transition-all hover:scale-105 active:scale-95 text-sm">
                     <FaReceipt className="text-purple-400" /> Receipts
