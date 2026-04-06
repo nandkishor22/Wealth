@@ -29,7 +29,8 @@ const AccountDetails = () => {
     const [isDeletingAccount, setIsDeletingAccount] = useState(false);
     const [accountEditForm, setAccountEditForm] = useState({ name: "", type: "", currency: "INR", initialBalance: 0 });
 
-    const [currentDate] = useState(new Date());
+    const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth());
+    const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
 
     const fetchData = async () => {
         setLoading(true);
@@ -44,9 +45,9 @@ const AccountDetails = () => {
                 initialBalance: accRes.data.initialBalance
             });
 
-            // Fetch Transactions for current month
-            const month = currentDate.getMonth() + 1;
-            const year = currentDate.getFullYear();
+            // Fetch Transactions for selected month
+            const month = selectedMonth + 1;
+            const year = selectedYear;
             const txnRes = await API.get(`/transactions?accountId=${id}&month=${month}&year=${year}`);
             setTransactions(txnRes.data);
         } catch (error) {
@@ -61,7 +62,7 @@ const AccountDetails = () => {
             fetchData();
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [user, id, currentDate]);
+    }, [user, id, selectedMonth, selectedYear]);
 
     const handleAccountUpdate = async () => {
         try {
@@ -124,7 +125,7 @@ const AccountDetails = () => {
 
     // Calculate Chart Data (Group by Day)
     const chartData = React.useMemo(() => {
-        const daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
+        const daysInMonth = new Date(selectedYear, selectedMonth + 1, 0).getDate();
         const data = Array.from({ length: daysInMonth }, (_, i) => ({
             name: (i + 1).toString(),
             Income: 0,
@@ -141,7 +142,7 @@ const AccountDetails = () => {
         });
 
         return data;
-    }, [transactions, currentDate]);
+    }, [transactions, selectedMonth, selectedYear]);
 
     if (loading) return <Layout><Loader /></Layout>;
     if (!account) return <Layout><div className="text-center p-10">Account not found</div></Layout>;
@@ -169,10 +170,30 @@ const AccountDetails = () => {
                 </div>
 
                 {/* Header */}
-                <div className="flex justify-between items-center">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                     <div>
-                        <h1 className="text-3xl font-bold text-white">{account.name} Analysis</h1>
-                        <p className="text-gray-400">{currentDate.toLocaleString('default', { month: 'long', year: 'numeric' })}</p>
+                        <h1 className="text-3xl font-bold text-white mb-2">{account.name} Analysis</h1>
+                        <div className="flex items-center gap-2">
+                            <select
+                                value={selectedMonth}
+                                onChange={(e) => setSelectedMonth(Number(e.target.value))}
+                                className="bg-white/10 border border-white/20 text-white rounded-xl px-4 py-2 focus:outline-none focus:border-purple-500 transition-colors appearance-none cursor-pointer"
+                            >
+                                {["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].map((m, i) => (
+                                    <option key={i} value={i} className="bg-gray-800 text-white">{m}</option>
+                                ))}
+                            </select>
+
+                            <select
+                                value={selectedYear}
+                                onChange={(e) => setSelectedYear(Number(e.target.value))}
+                                className="bg-white/10 border border-white/20 text-white rounded-xl px-4 py-2 focus:outline-none focus:border-purple-500 transition-colors appearance-none cursor-pointer"
+                            >
+                                {[new Date().getFullYear() - 2, new Date().getFullYear() - 1, new Date().getFullYear(), new Date().getFullYear() + 1].map((y) => (
+                                    <option key={y} value={y} className="bg-gray-800 text-white">{y}</option>
+                                ))}
+                            </select>
+                        </div>
                     </div>
                     <div className="text-right">
                         <p className="text-sm text-gray-400">Current Balance</p>

@@ -14,34 +14,43 @@ const Dashboard = () => {
   const [transactions, setTransactions] = useState([]);
   const [accounts, setAccounts] = useState([]);
   const [currentBudget, setCurrentBudget] = useState(null);
-  const [monthlyExpense, setMonthlyExpense] = useState(0);
   const [aiInsights] = useState(null);
   const [loading, setLoading] = useState(true);
   const { user } = useAuth();
+  const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth());
+  const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
 
   useEffect(() => {
     if (user) {
       fetchTransactions();
       fetchAccounts();
-      fetchBudget();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
+  useEffect(() => {
+    if (user) {
+      fetchBudget();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user, selectedMonth, selectedYear]);
+
   const fetchBudget = async () => {
     try {
-      const date = new Date();
       const res = await API.get(`/budgets`, {
         params: {
-          month: date.getMonth() + 1,
-          year: date.getFullYear(),
+          month: selectedMonth + 1,
+          year: selectedYear,
         },
       });
       if (res.data && res.data.amount) {
         setCurrentBudget(res.data.amount);
+      } else {
+        setCurrentBudget(null);
       }
     } catch (error) {
       console.error("Error fetching budget:", error);
+      setCurrentBudget(null);
     }
   };
 
@@ -58,18 +67,6 @@ const Dashboard = () => {
     try {
       const { data } = await API.get(`/transactions`);
       setTransactions(data);
-
-      // Calculate current month's expense for budget logic
-      const now = new Date();
-      const currentMonthExpenses = data.filter(t => {
-        const d = new Date(t.date);
-        return d.getMonth() === now.getMonth() &&
-          d.getFullYear() === now.getFullYear() &&
-          t.type.toLowerCase() === 'expense';
-      }).reduce((acc, curr) => acc + curr.amount, 0);
-
-      setMonthlyExpense(currentMonthExpenses);
-
     } catch (error) {
       console.error("Error fetching transactions:", error);
     } finally {
@@ -77,12 +74,16 @@ const Dashboard = () => {
     }
   };
 
+  const filteredTransactions = transactions.filter(t => {
+    const d = new Date(t.date);
+    return d.getMonth() === selectedMonth && d.getFullYear() === selectedYear;
+  });
 
-
+  const selectedMonthExpense = filteredTransactions.filter(t => t.type.toLowerCase() === 'expense').reduce((acc, curr) => acc + curr.amount, 0);
 
   const calculateChartData = () => {
     const data = {};
-    transactions.forEach((t) => {
+    filteredTransactions.forEach((t) => {
       if (t.type.toLowerCase() === "expense") {
         data[t.category] = (data[t.category] || 0) + t.amount;
       }
@@ -143,36 +144,60 @@ const Dashboard = () => {
               <div className="mt-6 w-full max-w-md">
                 <div className="flex justify-between text-sm mb-2">
                   <span className="text-gray-300">Monthly Budget</span>
-                  <span className={`${monthlyExpense > currentBudget ? "text-red-400 font-bold" : "text-gray-400"}`}>
-                    {Math.round((monthlyExpense / currentBudget) * 100)}% Used
+                  <span className={`${selectedMonthExpense > currentBudget ? "text-red-400 font-bold" : "text-gray-400"}`}>
+                    {Math.round((selectedMonthExpense / currentBudget) * 100)}% Used
                   </span>
                 </div>
                 <div className="h-4 bg-gray-700/50 rounded-full overflow-hidden border border-white/5">
                   <motion.div
                     initial={{ width: 0 }}
-                    animate={{ width: `${Math.min((monthlyExpense / currentBudget) * 100, 100)}%` }}
+                    animate={{ width: `${Math.min((selectedMonthExpense / currentBudget) * 100, 100)}%` }}
                     transition={{ duration: 1, ease: "easeOut" }}
-                    className={`h-full ${monthlyExpense > currentBudget ? "bg-red-500" :
-                      monthlyExpense > currentBudget * 0.8 ? "bg-yellow-500" : "bg-emerald-500"
+                    className={`h-full ${selectedMonthExpense > currentBudget ? "bg-red-500" :
+                      selectedMonthExpense > currentBudget * 0.8 ? "bg-yellow-500" : "bg-emerald-500"
                       }`}
                   />
                 </div>
                 <div className="flex justify-between text-xs mt-2 text-gray-500">
-                  <span>Spent: ₹{monthlyExpense.toLocaleString()}</span>
+                  <span>Spent: ₹{selectedMonthExpense.toLocaleString()}</span>
                   <span>Limit: ₹{currentBudget.toLocaleString()}</span>
                 </div>
               </div>
             )}
           </div>
-          <Link to="/add">
-            <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(168, 85, 247, 0.4)" }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-purple-900 px-6 py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-xl shadow-purple-900/20 flex items-center justify-center md:justify-start gap-2 w-full md:w-auto"
-            >
-              <span>+</span> New Transaction
-            </motion.button>
-          </Link>
+          <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
+            <div className="flex items-center gap-2">
+              <select
+                value={selectedMonth}
+                onChange={(e) => setSelectedMonth(Number(e.target.value))}
+                className="bg-white/10 border border-white/20 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 transition-colors appearance-none cursor-pointer"
+              >
+                {["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].map((m, i) => (
+                  <option key={i} value={i} className="bg-gray-800 text-white">{m}</option>
+                ))}
+              </select>
+
+              <select
+                value={selectedYear}
+                onChange={(e) => setSelectedYear(Number(e.target.value))}
+                className="bg-white/10 border border-white/20 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 transition-colors appearance-none cursor-pointer"
+              >
+                {[new Date().getFullYear() - 2, new Date().getFullYear() - 1, new Date().getFullYear(), new Date().getFullYear() + 1].map((y) => (
+                  <option key={y} value={y} className="bg-gray-800 text-white">{y}</option>
+                ))}
+              </select>
+            </div>
+            
+            <Link to="/add" className="w-full md:w-auto">
+              <motion.button
+                whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(168, 85, 247, 0.4)" }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-white text-purple-900 px-6 py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors shadow-xl shadow-purple-900/20 flex items-center justify-center md:justify-start gap-2 w-full md:w-auto"
+              >
+                <span>+</span> New Transaction
+              </motion.button>
+            </Link>
+          </div>
         </div>
 
         {/* Stats Grid */}
@@ -221,11 +246,11 @@ const Dashboard = () => {
                 <span className="w-2 h-8 bg-purple-500 rounded-full" />
                 Spending Breakdown
               </h2>
-              {transactions.length > 0 ? (
+              {filteredTransactions.length > 0 ? (
                 <Chart data={calculateChartData()} />
               ) : (
                 <div className="h-64 flex flex-col items-center justify-center text-gray-500">
-                  <p>No enough data to display chart.</p>
+                  <p>Not enough data to display chart for this month.</p>
                 </div>
               )}
             </Card>
@@ -244,7 +269,7 @@ const Dashboard = () => {
 
               <div className="space-y-3">
                 <AnimatePresence>
-                  {transactions.slice(0, 5).map((t, index) => {
+                  {filteredTransactions.slice(0, 5).map((t, index) => {
                     const currencyMap = {
                       'INR': '₹', 'USD': '$', 'EUR': '€', 'GBP': '£', 'JPY': '¥'
                     };
@@ -284,8 +309,8 @@ const Dashboard = () => {
                     )
                   })}
                 </AnimatePresence>
-                {transactions.length === 0 && (
-                  <p className="text-center text-gray-500 py-4">No recent transactions.</p>
+                {filteredTransactions.length === 0 && (
+                  <p className="text-center text-gray-500 py-4">No recent transactions for this month.</p>
                 )}
               </div>
             </Card>
