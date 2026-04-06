@@ -91,8 +91,8 @@ const Dashboard = () => {
     return Object.keys(data).map((key) => ({ name: key, value: data[key] }));
   };
 
-  const totalIncome = transactions.filter(t => t.type.toLowerCase() === 'income').reduce((acc, curr) => acc + curr.amount, 0);
-  const totalExpense = transactions.filter(t => t.type.toLowerCase() === 'expense').reduce((acc, curr) => acc + curr.amount, 0);
+  const totalIncome = filteredTransactions.filter(t => t.type.toLowerCase() === 'income').reduce((acc, curr) => acc + curr.amount, 0);
+  const totalExpense = filteredTransactions.filter(t => t.type.toLowerCase() === 'expense').reduce((acc, curr) => acc + curr.amount, 0);
   const balance = totalIncome - totalExpense;
 
   const container = {
